@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>try 2</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="timer">
+            <h1 id="header4">00</h1> <h1 id="colon">:</h1>   <h1 id="header3">00</h1> <h1 id="colon">:</h1>  <h1 id="header2">00</h1>   <h1 id="colon">:</h1> <h1 id="header">00</h1>
+      
+      
+    </div>
+        <button id="button">start</button>
+        <button id="button1">stop</button>
+    </body>
+    <script src="jquery.js"></script>
+    <script>
+        // try---1
+//       $(document).ready( function () {
+//           var sec=0;
+//           var id=0;
+//           var min=1;
+        
+//       $("#button").click(start);
+//       function start() {
+//           id=window.setInterval(timer,1000);
+//       }
+//       function timer(){
+//         document.getElementById("header").innerHTML=sec;
+//         sec++;
+//         if (sec==11)
+//         {
+//             sec=0;
+//         document.getElementById("header2").innerHTML=min;
+//         min++;
+//         }     
+//       }
+// $("#button1").click(clear);
+// function clear() {
+//     window.clearInterval(id);
+// }
+// })
+
+        //try---2
+// $(document).ready( function () {
+//     var sec=01;
+//     min=01;
+//     var id=0;
+//     var hour=0;
+//     $("#button").click(start);
+//     function start() {
+//         id=setInterval(timeron,1000);
+//     }
+//     function  timeron () {
+//         if(sec==5)
+//         {
+//              if(min==5)
+//                  {
+//                      hour++;
+//                      document.getElementById("header3").innerHTML=hour;
+                     
+//                      min=0;
+//                  }
+//                  document.getElementById("header2").innerHTML=min;
+//                  min++;
+//                  sec=00;
+                
+//         }
+//         document.getElementById("header").innerHTML=sec;
+//         sec++;
+       
+//     }
+// })
+
+        //try---3
+// $(document).ready(function () {
+//     $("#button").click(start);
+//     var id=0;
+//         var sec=1;
+//         var min=1;
+//         var hour=1;
+
+//     function start()
+//     {
+//         id=window.setInterval(timer,1000);
+//     }
+
+//     function timer() 
+//     {
+        
+//         if(sec==5)
+//         {
+//             if (min==5)
+//             {
+//             document.getElementById("header3").innerHTML=hour;
+//             hour++;
+//             min=0;
+//             }
+
+//             document.getElementById("header2").innerHTML=min;
+//             min++;
+//             sec=0;
+//         }
+
+//         document.getElementById("header").innerHTML=sec;
+//         sec++;
+
+        
+//     }
+//     $("#button1").click(stop);
+//     function stop()
+//     {
+//     window.clearInterval(id);
+//     }
+
+// })
+
+$(document).ready( function () {
+
+    $("#button").click(start);
+
+    var id=0;
+    var sec=1;
+    var min=1;
+    var msec=1;
+    var hour=1;
+    function start()
+    {
+    id=window.setInterval(timer,10)
+    }
+
+    function timer()
+    {
+        if (msec==100)
+        {
+            if(sec==10)
+            {
+                if(min==5)
+                {
+                    min=0;
+                    document.getElementById("header4").innerHTML=hour;
+                    hour++;
+                }
+                sec=0;
+                document.getElementById("header3").innerHTML=min;
+                min++;
+            }
+            msec=0;
+            document.getElementById("header2").innerHTML=sec;
+            sec++;
+        }
+        document.getElementById("header").innerHTML=msec;
+        msec++;
+    }
+
+
+    $("#button1").click( function() {
+        window.clearInterval(id);
+    })
+})
+    </script>
+</html>
