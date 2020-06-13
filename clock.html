@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+
+   <div class="container">
+        <div id="topic">Lolcat clock</div>
+
+<div class="clock">
+ <h1 id="first">00</h1><h1>:</h1> <h1 id="second">00</h1><h1>:</h1> <h1 id="third">00</h1>
+<h1 id="meridian"></h1>
+<br>
+<img src="img1.jpg" width="300" >
+<div class="milena"><h2 class="intervals">set wake up time  <select name="1Am to 2Am" id="select">
+        <option>2Am to 3Am</option>
+    </select></h2>
+   
+
+</div>
+<div class="milena"><h2 class="intervals">set wake up time  <select name="1Am to 2Am" id="select">
+    <option>2Am to 3Am</option>
+</select></h2>
+   
+</div>
+<div class="milena"><h2 class="intervals">set wake up time <select name="1Am to 2Am" id="select">
+    <option>3Am to 4Am</option>
+    <option>2Am to 3Am</option>
+</select></h2>
+</div>
+
+</div>
+<button id="button">Party time!</button><br>
+
+<footer id="footer">
+    All right reserved!
+</footer>
+
+
+</div>
+</body>
+<script src="jquery.js"></script>
+<script>  
+$(document).ready( function () {
+
+$("#button").click(start);
+function start() {
+    window.setInterval(show,1000)
+}
+
+function show() 
+{
+ var d=new Date();
+ document.getElementById("first").innerHTML=d.getHours();
+ document.getElementById("second").innerHTML=d.getMinutes();
+ document.getElementById("third").innerHTML=d.getSeconds();
+ if(d.getHours()>=12)
+ {
+     document.getElementById("meridian").innerHTML=" PM!";
+ }
+ else{
+    document.getElementById("meridian").innerHTML=" AM!";
+ }
+}
+})
+</script>
+</html>
