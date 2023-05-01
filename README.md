@@ -1,3 +1,1 @@
-# myfirst
-this will be the very first repository
-hello my name is Sandeep Kashyap.
+# Digital Clock using html,css and javascript
